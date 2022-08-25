@@ -1,0 +1,1 @@
+web: gunicorn Machine_Learning_Model.FlaskApp:app
