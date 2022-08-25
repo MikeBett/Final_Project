@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # Load the pickle model
 
-model = pickle.load(open("finalized_model.pkl", "rb"))
+#model = pickle.load(open("finalized_model.pkl", "rb"))
 
 
 #################################################
