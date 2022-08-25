@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #024235;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #a5beb0;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: rgb(92, 116, 97);
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: rgb(212, 92, 92);
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Ferilizer Consumption World Wide </h1>
+  <p>1961-2018</p>
+</div>
+
+<div class="navbar">
+  <a href="../static/Images/World Fertilizer Consumption.png">Top 10a</a>
+  <a href="../static/Images/Top 10 Fertilizer Cunsumer in the World.png">Top 10b</a>
+  <a href="../static/js/data.js" class="right">Data</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>The "Big 3" nutrients in commercial fertilizers</h2>
+    
+    <img src="../T10/1.jpg" alt="Random Name" style="width:100%">
+    <ul>
+        <li>Nitrogen</li>
+        <li>Phosphorus </li>
+        <li>Potassium </li>
+    </ul>  
+    <h3>More Text</h3>
+    <p>The Nitrogen element works by increasing the 
+        plant's capacity to produce new stems, flowers or fruit.</p>
+    <p>Phosphorus is a vital nutrient for plants, allowing them to grow and thrive.</p>
+    <p>Potassium (K) is an essential element for plant growth it is important to food crops. Potassium, often called potash,
+         helps plants use water and resist drought and enhances fruits and vegetables.</p>
+         <img class="" src="../static/Images/5m.jpg" alt="3" width="500" height="320">
+  </div>
+  <div class="main">
+    <h2>Yield Score Prediction</h2>
+
+<!-- **************************************************************************** -->
+ 
+    <div class="row">
+      <div class="col-lg-12">
+          <br>
+        <h3> <span class="text-muted">Text</span></h3>
+        <p> text.///
+        </p>
+      </div>
+    </div>
+     <!-- Third row ENDS: Explanation of Happiness Score Prediction --> 
+    
+    <br><br>
+
+    <!-- Forth row: Happiness Prediction Input predict.js, bali swing image -->   
+    <div class="row">
+      <!-- Happiness Prediction Input predict.js -->
+      <div class="col-lg-6">
+          
+        <p>Enter <b>values</b> for each feature: <br>
+        </p>
+
+        <div class="field">
+          <p class="control">
+          1. Nutrient - Nitrogen (kg/ha): <input class="input" type="number" value=2021 min=2020 max=2050 step='1' name="year" id="year" placeholder=2021>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+          2. Nutrient - Phosphate (kg/ha): <input class="input" type="number" value=62723 min=700 max=200000  step='1' name="gdp" id="gdp" placeholder=62723>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+          3. Nutrient - Potash (kg/ha): <input class="input" type="number" value=73.9 min=45 max=80  step='0.1' name="life_exp" id="life_exp" placeholder=73.9>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+
+        <div class="field">
+          <p class="control">
+          4. Annual Mean Rainfall (mm): <input class="input" type="number" value=0.91 min=0 max=1  step='0.01' name="freedom" id="freedom" placeholder=0.91>
+          </p>
+        </div>
+
+
+        <!-- Prediction Button: Reference predictScore.js -->
+        <div class="field">
+          <button class="button btn btn-secondary" id="predict_but">Predict Yield</button>
+          <br><br>
+        </div>
+        <!-- Prediction Button ENDS : Reference predictScore.js -->
+
+        <!-- Prediction Score: Reference predictScore.js -->
+        <div class="field" id="final_score">
+          <!-- APPEND PREDICTION SCORE HERE VIA predictScore.js -->
+          <br>
+        </div>
+         <!-- Prediction Score ENDS: Reference predictScore.js -->
+
+      </div>
+      <!-- Happiness Prediction Input predict.js ENDS -->
+    
+      <!-- Bali swing image -->
+      <div class="col-lg-6">
+        <img class="" src="../static/Images/1.jfif" alt="3" width="500" height="200">
+      </div>
+      <!-- Bali swing image ENDS -->
+
+    </div>
+    <!-- Forth row ENDS: Happiness Prediction Input predict.js, bali swing image --> 
+        
+    <hr class="featurette-divider">
+
+    <!-- Fifth row: Summary Paragraph of Random Forest Accuracy -->
+    <div class="row">
+      <div class="happy_map col-lg-12">
+        <h2 class="featurette-heading">Text</h2>
+        <h2><span class="text-muted">T <b></b></span> </h2>
+        <br>
+        <p>
+          Out the of full dataset, <br>
+          - 80% was used to train the model <br>
+          - 20% was used to test the model. 
+          <br><br>
+          The table below is the list of test data with its <b>actual</b> and <b>predicted happiness score</b>.
+          Despite only 76% accurate, instances when predictions are inaccurate are predicted close to the actual happiness score
+          (usually 1 happiness score number away from actual).
+        </p>
+      </div>
+    </div>
+     <!-- Fifth row ENDS: Summary Paragraph of Random Forest Accuracy -->
+
+     <!-- Sixth row: Table of Actual and Prediction Scores by country -->
+    <div class="row">
+      <div class="col-lg-12 img-fluid">
+
+        <!-- INSERT TABLE OF SEVERAL COUNTRIES: and it's feature values, happiness score and predicteed ML happiness score -->
+        <table class="table align-middle">
+
+          <div class =searching>
+            <!-- INSERT SEARCH BAR FOR USER TO TYPE IN COUNTRY -->
+          </div>
+          
+          <br>
+
+          <thead class="ml_headings">
+          <tr>
+              <th class="table-head">Year</th>
+              <th class="table-head">Country</th>
+              <th class="table-head">Actual Score</th>
+              <th class="table-head">Predicted Score</th>
+          </tr>
+          </thead>
+
+          <tbody class="ml_table">
+            <!-- JAVASCRIPT: wordCloud.js: References class="ml_table" -->
+          </tbody>
+
+      </table>
+
+      </div>
+    </div>
+    <!-- Sixth row ENDS: Table of Actual and Prediction Scores by country -->
+
+    <hr class="featurette-divider">
+
+  </div><!-- Container for main content ENDS -->
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2021 The Flow &middot;</p>
+  </footer>
+
+</main>
+
+    <h5>Title description</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p><br>
+    </div>
+    <div class="footer">
+        <h2>Footer</h2>
+</body>
+
+</html>
