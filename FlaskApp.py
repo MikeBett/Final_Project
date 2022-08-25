@@ -1,4 +1,4 @@
-from pyexpat import model
+#from pyexpat import model
 from flask import Flask, jsonify
 import pickle
 
@@ -17,11 +17,10 @@ model = pickle.load(open("finalized_model.pkl", "rb"))
 # Flask Routes
 #################################################
 
-# @app.route("/api/v1.0/justice-league")
-# def justice_league():
-#     """Return the justice league data as json"""
 
-#     return jsonify(justice_league_members)
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 
 @app.route("/")
