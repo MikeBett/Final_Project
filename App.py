@@ -1,5 +1,6 @@
 #from pyexpat import model
-from flask import Flask, jsonify
+from flask import Flask, jsonify , request, render_template
+import numpy as np
 import pickle
 
 #################################################
@@ -17,21 +18,30 @@ model = pickle.load(open("finalized_model.pkl", "rb"))
 # Flask Routes
 #################################################
 
-
-@app.route('/')
-def home():
+@app.route('/', methods=['GET'])
+def Home():
     return render_template('index.html')
 
+@app.route('/predict',methods=['POST'])
+def predict():
 
-@app.route("/")
-def welcome():
-    return (
-        f"Welcome to the Justice League API!<br/>"
-        f"Available Routes:<br/>"
-        f"/api/v1.0/justice-league<br/>"
-        f"/api/v1.0/justice-league/superhero/batman<br/>"
-        f"/api/v1.0/justice-league/real_name/bruce%20wayne"
-    )
+    int_features = [int(x) for x in request.form.values()]
+    prediction = model.predict
+
+    output = prediction
+
+    return render_template('index.html', prediction_text='Sales should be $ {}'.format(output))
+
+
+# @app.route("/")
+# def welcome():
+#     return (
+#         f"Welcome to the Justice League API!<br/>"
+#         f"Available Routes:<br/>"
+#         f"/api/v1.0/justice-league<br/>"
+#         f"/api/v1.0/justice-league/superhero/batman<br/>"
+#         f"/api/v1.0/justice-league/real_name/bruce%20wayne"
+
 
 
 # @app.route("/api/v1.0/justice-league/real_name/<real_name>")

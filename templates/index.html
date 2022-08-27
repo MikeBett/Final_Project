@@ -141,7 +141,7 @@ body {
 
 <!-- **************************************************************************** -->
  
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-12">
       </div>
     </div>
@@ -150,63 +150,79 @@ body {
     <br><br>
 
     <!-- Forth row: Happiness Prediction Input predict.js, bali swing image -->   
-    <div class="row">
+    <!-- <div class="row">
       <!-- Happiness Prediction Input predict.js -->
-      <div class="col-lg-6">
+      <!-- <div class="col-lg-6">
           
         <p>Enter <b>values</b> for each feature: <br>
         </p>
 
-        <div class="field">
+        <!-- <div class="field">
           <p class="control">
-          1. Nutrient - Nitrogen (kg/ha): <input class="input" type="number" value=2021 min=2020 max=2050 step='1' name="year" id="year" placeholder=2021>
+          1. Nutrient - Nitrogen (kg/ha): <input class="input" type="number" value=35 min=0 max=100 step='0.01' name="year" id="year" placeholder=35>
           </p>
-        </div>
+        </div> -->
+
+        <!-- <div class="field">
+          <p class="control">
+          2. Nutrient - Phosphate (kg/ha): <input class="input" type="number" value=30 min=0 max=100  step='0.01' name="gdp" id="gdp" placeholder=30>
+          </p>
+        </div> -->
+
+        <!-- <div class="field">
+          <p class="control">
+          3. Nutrient - Potash (kg/ha): <input class="input" type="number" value=10 min=0 max=50  step='0.01' name="life_exp" id="life_exp" placeholder=10>
+          </p>
+        </div> -->
+
+        <!-- <div class="field">
+          <p class="control">
 
         <div class="field">
           <p class="control">
-          2. Nutrient - Phosphate (kg/ha): <input class="input" type="number" value=62723 min=700 max=200000  step='1' name="gdp" id="gdp" placeholder=62723>
+          4. Annual Mean Rainfall (mm): <input class="input" type="number" value=400 min=0 max=1000  step='0.1' name="freedom" id="freedom" placeholder=400>
           </p>
-        </div>
-
-        <div class="field">
-          <p class="control">
-          3. Nutrient - Potash (kg/ha): <input class="input" type="number" value=73.9 min=45 max=80  step='0.1' name="life_exp" id="life_exp" placeholder=73.9>
-          </p>
-        </div>
-
-        <div class="field">
-          <p class="control">
-
-        <div class="field">
-          <p class="control">
-          4. Annual Mean Rainfall (mm): <input class="input" type="number" value=0.91 min=0 max=1  step='0.01' name="freedom" id="freedom" placeholder=0.91>
-          </p>
-        </div>
+        </div> -->
 
 
         <!-- Prediction Button: Reference predictScore.js -->
-        <div class="field">
+        <!-- <div class="field">
           <button class="button btn btn-secondary" id="predict_but">Predict Yield</button>
           <br><br>
-        </div>
+        </div> -->
         <!-- Prediction Button ENDS : Reference predictScore.js -->
 
         <!-- Prediction Score: Reference predictScore.js -->
-        <div class="field" id="final_score">
+        <!-- <div class="field" id="final_score"> -->
           <!-- APPEND PREDICTION SCORE HERE VIA predictScore.js -->
-          <br>
-        </div>
+          <!-- <br>
+        </div> -->
          <!-- Prediction Score ENDS: Reference predictScore.js -->
 
-      </div>
-      <!-- Happiness Prediction Input predict.js ENDS -->
+      <!-- </div>
+      Happiness Prediction Input predict.js ENDS -->
+
+         <!-- <form action="{{ url_for('predict')}}"method="post">
+             <input type="text" name='Pregnancies' placeholder="Pregnancies" required="required" />
+              <input type="text" name="Glucose" placeholder="Glucose" required="required" />
+              <input type="text" name="SkinThickness" placeholder="kinThickness" required="required" />
+              <input type="text" name="Insulin" placeholder="Insulin" required="required" />
+            <br>
+            <br>
+            <button type="submit" class="btn btn-success btn-block btn-large">Predict</button>
+      
+         </form>
+             <br>
+         <br>
+         {{ prediction_text }} -->
     
-      <!-- Bali swing image -->
-      <div class="col-lg-6">
-        <img class="" src="../HTML/static/Images/1.jfif" alt="3" width="500" height="200">
-      </div>
-      <!-- Bali swing image ENDS -->
+         <form action="{{ url_for('predict')}}"method="post">
+          <input type="text" name="rate" placeholder="rate" required="required" />
+            <input type="text" name="sales in first month" placeholder="sales in first month" required="required" />
+        <input type="text" name="sales in second month" placeholder="sales in second month" required="required" />
+        <input type="text" name="sales in second month" placeholder="sales in second month" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict sales in third month</button>
+        </form>
 
     </div>
     <!-- Forth row ENDS: Happiness Prediction Input predict.js, bali swing image --> 
