@@ -199,30 +199,34 @@ body {
         </div> -->
          <!-- Prediction Score ENDS: Reference predictScore.js -->
 
-      <!-- </div>
-      Happiness Prediction Input predict.js ENDS -->
 
-         <!-- <form action="{{ url_for('predict')}}"method="post">
-             <input type="text" name='Pregnancies' placeholder="Pregnancies" required="required" />
-              <input type="text" name="Glucose" placeholder="Glucose" required="required" />
-              <input type="text" name="SkinThickness" placeholder="kinThickness" required="required" />
-              <input type="text" name="Insulin" placeholder="Insulin" required="required" />
-            <br>
-            <br>
-            <button type="submit" class="btn btn-success btn-block btn-large">Predict</button>
-      
-         </form>
-             <br>
-         <br>
-         {{ prediction_text }} -->
     
-         <form action="{{ url_for('predict')}}"method="post">
-          <input type="text" name="rate" placeholder="rate" required="required" />
-            <input type="text" name="sales in first month" placeholder="sales in first month" required="required" />
-        <input type="text" name="sales in second month" placeholder="sales in second month" required="required" />
-        <input type="text" name="sales in second month" placeholder="sales in second month" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict sales in third month</button>
+<form action="{{ url_for('main') }}" method="POST">
+      <label for="Nutrient - Nitrogen (kg/ha)">Acceleration (m/s^2):</label><br />
+          <input
+            type="number"
+            id="Nutrient - Nitrogen (kg/ha)"
+            name="Nutrient - Nitrogen (kg/ha)"
+            value="34"
+            /><br /><br />
+          <label for="Nutrient - Phosphate (kg/ha)">Weight (kg):</label><br />
+          <input type="number" id="Nutrient - Phosphate (kg/ha)" name="Nutrient - Phosphate (kg/ha)" value="12" /><br /><br />
+          
+          <label for="Nutrient - Potash (kg/ha)">Weight (kg):</label><br />
+          <input type="number" id="Nutrient - Potash (kg/ha)" name="Nutrient - Potash (kg/ha)" value="12" /><br /><br />
+
+          <label for="Annual Mean Rainfall (mm)">Weight (kg):</label><br />
+          <input type="number" id="Annual Mean Rainfall (mm)" name="Annual Mean Rainfall (mm)" value="12" /><br /><br />
+          
+          <input type="submit" value="Submit" />
         </form>
+    <br />
+      {% if result %}
+    <p>
+      The calculated fuel consumption is
+      <span style="color: orange">{{result}}</span>
+    </p>
+      {% endif %}
 
     </div>
     <!-- Forth row ENDS: Happiness Prediction Input predict.js, bali swing image --> 
