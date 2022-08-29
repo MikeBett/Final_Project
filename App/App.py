@@ -12,7 +12,7 @@ app =Flask(__name__, template_folder='templates')
 
 # Load the pickle model
 
-model = pickle.load(open("finalized_model.pkl", "rb"))
+#model = pickle.load(open("finalized_model.pkl", "rb"))
 
 
 # #################################################
