@@ -7,7 +7,7 @@ import pickle
 #################################################
 # Flask Setup
 #################################################
-app = flask.Flask(__name__, template_folder='templates')
+app =Flask(__name__, template_folder='templates')
 
 
 # Load the pickle model
@@ -21,20 +21,20 @@ model = pickle.load(open("finalized_model.pkl", "rb"))
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-    if flask.request.method == 'GET':
-        return(flask.render_template('index.html'))
+    if request.method == 'GET':
+        return(render_template('index.html'))
 
-    elif flask.request.method == 'POST':
-        Nitrogen = flask.request.form["Nutrient - Nitrogen (kg/ha)"]
-        Phosphate = flask.request.form["Nutrient - Phosphate (kg/ha)"]
-        Potash = flask.request.form["Nutrient - Potash (kg/ha)"]
-        Rainfall = flask.request.form["Annual Mean Rainfall (mm)"]
+    elif request.method == 'POST':
+        Nitrogen = request.form["Nutrient - Nitrogen (kg/ha)"]
+        Phosphate = request.form["Nutrient - Phosphate (kg/ha)"]
+        Potash = request.form["Nutrient - Potash (kg/ha)"]
+        Rainfall = request.form["Annual Mean Rainfall (mm)"]
 
         input_variables = [[Nitrogen, Phosphate, Potash,Rainfall]]
 
         prediction = model.predict(input_variables)[0]
 
-        return flask.render_template('index.html',
+        return render_template('index.html',
                                      original_input={"Nutrient - Nitrogen (kg/ha)": Nitrogen,
                                                      "Nutrient - Phosphate (kg/ha)": Phosphate,
                                                      "Nutrient - Potash (kg/ha)": Potash,
