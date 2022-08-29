@@ -3,6 +3,7 @@ from flask import Flask, jsonify , request, render_template
 #import numpy as np
 #import flask
 import pickle
+from sklearn.linear_model import LinearRegression
 
 #################################################
 # Flask Setup
@@ -12,7 +13,7 @@ app =Flask(__name__, template_folder='templates')
 
 # Load the pickle model
 
-#model = pickle.load(open("finalized_model.pkl", "rb"))
+model = pickle.load(open("finalized_model.pkl", "rb"))
 
 
 # #################################################
